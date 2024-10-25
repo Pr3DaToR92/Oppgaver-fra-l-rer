@@ -1,0 +1,13 @@
+Oppgave: 
+
+lag en nettside som har 3 forskjellige knapper. 
+disse vises frem med array og forløkke. 
+det skal være: Oppgaver, Javascript,  HTML
+
+gjør at det går an å trykke på disse knappene. 
+
+når man trykker på prosjekter så vises det navn på Oppgaver man har gjort i en h3 tag.
+når man trykker på Javascript så vises det en punktliste over fakta om javascript,
+når man trykker på HTML så vises det avsnitt med fakta om HTML 
+
+lag disse med array og for-løkke
