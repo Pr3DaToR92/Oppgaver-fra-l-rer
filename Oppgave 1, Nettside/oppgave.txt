@@ -11,3 +11,8 @@ når man trykker på Javascript så vises det en punktliste over fakta om javasc
 når man trykker på HTML så vises det avsnitt med fakta om HTML 
 
 lag disse med array og for-løkke
+
+Videre utvikling:
+
+bygge videre med å kunne legge til flere prosjekter og de andre, 
+mulig å trykke på en for endre og for å slette.

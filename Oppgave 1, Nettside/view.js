@@ -9,25 +9,27 @@ function updateView(){
         <button onclick="drawJSinfo()">Javascript Info</button>
         <button onclick="drawHTMLinfo()">HTML Info</button>
         <hr>
-
+        <button onclick="#">Legg til</button>
+        <br>
         ${content}
 
     </div>
-    `
+    `;
 };
 
 function drawProjects(){
     let html = "";
-
+    
     for(let i = 0; i < projects.length; i++){
-        html += `
+        html += /*HTML*/`
         <div>
-            <h3>
-            ${projects[i]}
+            <h3> 
+            ${projects[i]} 
             </h3>
+            <button onclick="setNewProjects()">Endre</button>
+            <hr>
         </div>
-        <hr>
-        `
+        `;
     }
     content = html;
     updateView();
@@ -44,7 +46,7 @@ function drawJSinfo(){
             ${jsInfo[i]}
             </h5></li>
         </ul>
-        `
+        `;
     }
     content = html;
     updateView();
@@ -66,6 +68,7 @@ function drawHTMLinfo(){
     updateView();
 }
 
+//--------------------Eksempel----------------------//
 //Eksempel hvordan ett array kan tegnes//
 // function drawProjects(){
 //     let html = '';
