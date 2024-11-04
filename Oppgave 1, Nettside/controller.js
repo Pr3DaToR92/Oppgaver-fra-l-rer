@@ -2,25 +2,69 @@
 
 function setNewProjects(){
     let newText = "";
-    for(let i = 0; i < projects.length; i++){ 
-    newText += /*HTML*/`
-    <div>
+   
+
+    newText+= `
+        <div>
     <br>
-    <form>
-        <label for="newText">${i}:</label>
-        <input type="text" placeholder="Skriv inn endring her">
-        <button type="submit">Bekreft</button>
-    </form>
+        <label for="newText"></label>
+        <input type="text" placeholder="Skriv inn prosjekt her" onchange="inputs = this.value">
+        <button type="submit" onclick="confirm()">Bekreft</button>
     </div>
     `;
-    }
-        if (newText) {
-            projects.push(newText)
-        } else {
-            alert("Vennligst skriv inn tekst");
-    }
-    newText= "";
+ 
+    content = newText;
     updateView();
+}
+function setToChange(index){
+    selectedIndex = index;
+    changeMode = true;
+    setNewProjects()
+}
+
+// function changeNewProject(){
+ 
+//     let newText = "";    
+//     newText+= `
+//             <div>
+//         <br>
+//         <form>
+//             <label for="newText"></label>
+//             <input type="text" placeholder="Endre her" onchange="inputs = this.value">
+//             <button type="submit" onclick="confirmChange()">Bekreft</button>
+//         </form>
+//         </div>
+//     `;
+ 
+//     content = newText;
+//     updateView();
+// }
+
+// function confirmChange(){
+//     if(inputs != ''){
+//         projects[selectedIndex] = inputs;
+//     }
+//     else {
+//         alert("Vennligst skriv inn tekst");
+//     }
+//     drawProjects();
+// }
+
+
+
+function confirm(){
+    if (inputs != '') {
+        if(changeMode == false){
+            projects.push(inputs)
+        }
+        else{
+            projects[selectedIndex] = inputs;
+            changeMode = false;
+        }
+    } else {
+       alert('Skriv inn tekst')
+    }
+    drawProjects();
 }
 
 

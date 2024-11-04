@@ -1,7 +1,9 @@
 //Model
 
 // let drawArea= '';
+let selectedIndex = null;
 let content = '';
+let changeMode = false;
 const projects = /*HMTL*/ [
     "Alpha Omega",
     "Minesviper",
@@ -17,6 +19,8 @@ const jsInfo =  [
 const htmlInfo = [
     "HyperText HyperText Markup Language (HTML) er et markeringsspråk for formatering av nettsider med hypertekst og annen informasjon som kan vises i en nettleser.",
 ];
+
+let inputs = '';
 
 /*let person = [
     {

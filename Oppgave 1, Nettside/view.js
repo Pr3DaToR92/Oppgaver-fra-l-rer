@@ -9,7 +9,7 @@ function updateView(){
         <button onclick="drawJSinfo()">Javascript Info</button>
         <button onclick="drawHTMLinfo()">HTML Info</button>
         <hr>
-        <button onclick="#">Legg til</button>
+        <button onclick="setNewProjects()">Legg til</button>
         <br>
         ${content}
 
@@ -24,9 +24,9 @@ function drawProjects(){
         html += /*HTML*/`
         <div>
             <h3> 
-            ${projects[i]} 
+            ${projects[i]}
             </h3>
-            <button onclick="setNewProjects()">Endre</button>
+            <button onclick="setToChange(${i})">Endre</button>
             <hr>
         </div>
         `;
