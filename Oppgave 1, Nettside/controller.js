@@ -2,24 +2,53 @@
 
 function setNewProjects(){
     let newText = "";
-   
-
-    newText+= `
+        newText+= /*HTML*/`
         <div>
-    <br>
+        <br>
         <label for="newText"></label>
         <input type="text" placeholder="Skriv inn prosjekt her" onchange="inputs = this.value">
         <button type="submit" onclick="confirm()">Bekreft</button>
-    </div>
+        </div>
     `;
- 
     content = newText;
     updateView();
 }
+
+function setNewSearch(text){
+    model.data.find((data) => data.text == text)
+    
+    let newSearch = "";
+        newSearch += /*HTML*/ `
+        <div>
+        <br>
+        <label for="newSearch"></label>
+        <input type="text" placeholder="Skriv inn nytt søk her" onchange="inputs = this.value">
+        <button type="submit" onclick="confirm()">Bekreft</button>
+        </div>
+    `;
+    foundIndex = newSearch;
+    updateView();
+}
+
 function setToChange(index){
     selectedIndex = index;
     changeMode = true;
     setNewProjects()
+}
+
+function confirm(){
+    if (inputs != '') {
+        if(changeMode == false){
+            model.data.projects.push(inputs)
+        }
+        else{
+            model.data.projects[selectedIndex] = inputs;
+            changeMode = false;
+        }
+    } else {
+       alert('Skriv inn tekst')
+    }
+    drawProjects();
 }
 
 // function changeNewProject(){
@@ -52,20 +81,6 @@ function setToChange(index){
 
 
 
-function confirm(){
-    if (inputs != '') {
-        if(changeMode == false){
-            projects.push(inputs)
-        }
-        else{
-            projects[selectedIndex] = inputs;
-            changeMode = false;
-        }
-    } else {
-       alert('Skriv inn tekst')
-    }
-    drawProjects();
-}
 
 
 //--------------------Eksempel----------------------//

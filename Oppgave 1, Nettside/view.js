@@ -10,8 +10,10 @@ function updateView(){
         <button onclick="drawHTMLinfo()">HTML Info</button>
         <hr>
         <button onclick="setNewProjects()">Legg til</button>
+        <button onclick="setNewSearch()">Søk</button>
         <br>
         ${content}
+        ${foundIndex}
 
     </div>
     `;
@@ -20,11 +22,11 @@ function updateView(){
 function drawProjects(){
     let html = "";
     
-    for(let i = 0; i < projects.length; i++){
+    for(let i = 0; i < model.data.projects.length; i++){
         html += /*HTML*/`
         <div>
-            <h3> 
-            ${projects[i]}
+            <h3>
+            ${model.data.projects[i]}
             </h3>
             <button onclick="setToChange(${i})">Endre</button>
             <hr>
@@ -38,12 +40,12 @@ function drawProjects(){
 function drawJSinfo(){
     let html = "";
 
-    for(let i = 0; i < jsInfo.length; i++){
+    for(let i = 0; i < model.data.jsInfo.length; i++){
         html += `
         <div>
         <ul>
             <li><h5>
-            ${jsInfo[i]}
+            ${model.data.jsInfo[i]}
             </h5></li>
         </ul>
         `;
@@ -55,17 +57,21 @@ function drawJSinfo(){
 function drawHTMLinfo(){
     let html = "";
 
-    for(let i = 0; i < htmlInfo.length; i++){
+    for(let i = 0; i < model.data.htmlInfo.length; i++){
         html += `
         <div>
         <p>
-        ${htmlInfo[i]}
+        ${model.data.htmlInfo[i]}
         </p>
         </div>
         `
     }
     content = html;
     updateView();
+}
+function drawSearchArea(){
+    updateView();
+    return foundIndex;
 }
 
 //--------------------Eksempel----------------------//

@@ -10,9 +10,16 @@ når man trykker på prosjekter så vises det navn på Oppgaver man har gjort i 
 når man trykker på Javascript så vises det en punktliste over fakta om javascript,
 når man trykker på HTML så vises det avsnitt med fakta om HTML 
 
-lag disse med array og for-løkke
+lag disse med array og for-løkke Done!
 
 Videre utvikling:
 
 bygge videre med å kunne legge til flere prosjekter og de andre, 
-mulig å trykke på en for endre og for å slette.
+mulig å trykke på en for endre og for å slette. Done!
+
+Ekstra utfordring: 
+
+Lage om jsinfo, htmlinfo til array med objekter,
+som holder rede på om det er jsinfo og htmlinfo med hjelp av find eller filter.
+
+Jobbe med inputs og eventhandlere.
